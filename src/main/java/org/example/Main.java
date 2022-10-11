@@ -1,6 +1,11 @@
 package org.example;
 
-import java.util.Scanner;
+import org.example.model.*;
+
+import java.math.BigDecimal;
+import java.time.Period;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -39,23 +44,58 @@ public class Main {
 //        double roundedValue = (double)Math.round(amount*100) / 100;
 //        System.out.println("Final amount is "+ roundedValue);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Give the initial amount ");
-        double initialAmount = scanner.nextDouble();
-        System.out.println("Give the interestRatePerYear ");
-        double interestRatePerYear = scanner.nextDouble();
-        System.out.println("Give the number of the years ");
-        int years = scanner.nextInt();
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Give the initial amount ");
+//        double initialAmount = scanner.nextDouble();
+//        System.out.println("Give the interestRatePerYear ");
+//        double interestRatePerYear = scanner.nextDouble();
+//        System.out.println("Give the number of the years ");
+//        int years = scanner.nextInt();
+//
+//        double amount  = initialAmount;
+//        for (int year = 0 ; year < years; year++) {
+//            amount += amount * interestRatePerYear;
+//        }
+//        double roundedValue = (double)Math.round(amount*100) / 100;
+//
+//        System.out.println("Final amount is "+ roundedValue);
 
-        double amount  = initialAmount;
-        for (int year = 0 ; year < years; year++) {
-            amount += amount * interestRatePerYear;
-        }
-        double roundedValue = (double)Math.round(amount*100) / 100;
 
-        System.out.println("Final amount is "+ roundedValue);
+        Customer customer = new Customer();
+
+        System.out.println(customer.getId());
+
+        Customer anotherCustomer = new Customer();
+
+        anotherCustomer.setId(45);
+
+        Address address = new Address();
+        address.setCity("Athens");
+        address.setStreet("Alexandras");
+        address.setZipCode("11521");
+
+        anotherCustomer.setAddress(address);
+        System.out.println(anotherCustomer.getId() + "   " + anotherCustomer.getAddress());
 
 
+        Product product = new Product();
+        Product product1 = new Product(23,"chips", new BigDecimal("1.30"));
+
+        System.out.println(product1.toString());
+
+
+        Employee person   = new Employee();
+
+
+        Person person1 = new Customer ();
+
+        System.out.println(person.getClass().getName());
+
+
+        List<Employee> employees = new ArrayList<>();
+        List<Customer> customers;
+
+        List<Person> persons;
 
     }
 }
