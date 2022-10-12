@@ -1,11 +1,12 @@
-package org.example;
+package gr.athtech.crm;
 
-import org.example.model.*;
+import gr.athtech.crm.model.*;
+import gr.athtech.crm.repository.PersonRepository;
+import gr.athtech.crm.repository.PersonRepositoryImpl;
+import gr.athtech.crm.exception.PersonException;
+
 
 import java.math.BigDecimal;
-import java.time.Period;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -91,11 +92,24 @@ public class Main {
 
         System.out.println(person.getClass().getName());
 
+        Customer customer2 = new Customer ();
+        customer2.setId(3);
+        customer2.setName("Dimitris");
 
-        List<Employee> employees = new ArrayList<>();
-        List<Customer> customers;
+        PersonRepository repository = new PersonRepositoryImpl();
+        repository.create(person1);
+        repository.create(customer2);
 
-        List<Person> persons;
+        try {
+            repository.update(1, address);
+        }
+        catch(PersonException personException){
+            System.out.println("A exception occured");
+        }
+
+        System.out.println(repository);
+
+
 
     }
 }

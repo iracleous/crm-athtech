@@ -1,4 +1,4 @@
-package org.example.model;
+package gr.athtech.crm.model;
 
 import java.util.Date;
 
@@ -38,5 +38,15 @@ public abstract class Person {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", address=" + address +
+                ", id=" + id +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
     }
 }

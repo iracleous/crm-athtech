@@ -1,4 +1,4 @@
-package org.example.model;
+package gr.athtech.crm.model;
 
 public class Address {
 

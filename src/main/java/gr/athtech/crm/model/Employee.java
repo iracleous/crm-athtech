@@ -1,7 +1,6 @@
-package org.example.model;
+package gr.athtech.crm.model;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 public class Employee extends Person{
 
